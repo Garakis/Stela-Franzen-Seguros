@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative hidden lg:block"
+          className="relative mt-12 lg:mt-0"
         >
           <div className="aspect-[4/5] overflow-hidden border border-gold/40 shadow-2xl relative">
             <img src="/familia.jpg" alt="Família Segura" className="w-full h-full object-cover object-center contrast-[1.05]" />
