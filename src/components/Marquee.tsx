@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const logos = [
@@ -27,7 +27,7 @@ export default function Marquee() {
     }
   }, []);
 
-  useAnimationFrame((t, delta) => {
+  useAnimationFrame((t: number, delta: number) => {
     if (!contentWidth) return;
     
     let currentX = baseX.get();
