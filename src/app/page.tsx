@@ -2,7 +2,7 @@ import Hero from "../components/Hero";
 import Marquee from "../components/Marquee";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Heart, Car, Building, ShieldAlert, Quote } from "lucide-react";
+import { ArrowRight, Heart, Car, Building, ShieldAlert, Quote, Home as HomeIcon, Smartphone, DollarSign } from "lucide-react";
 
 export default function Home() {
   return (
@@ -22,50 +22,89 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Card 1 */}
+            {/* Card 1 - Saúde */}
             <div className="bg-white border border-gray-200 p-6 lg:p-8 flex flex-col items-start shadow-sm hover:shadow-xl hover:border-gold/50 transition-all group">
               <Heart className="text-gold w-10 h-10 mb-6" />
-              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Saúde & Odonto</h3>
+              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Saúde</h3>
               <p className="text-primary/70 font-sans text-sm mb-8 flex-grow">
-                Proteção completa para o capital humano da sua empresa com as melhores redes referenciadas.
+                Planos individuais e corporativos, odonto premium, saúde ocupacional e até cobertura para seu pet.
               </p>
               <Link href="/produtos?cat=Saúde" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
                 Ver Opções <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
-            {/* Card 2 */}
+            {/* Card 2 - Vida e Previdência */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 flex flex-col items-start shadow-sm hover:shadow-xl hover:border-gold/50 transition-all group">
+              <ShieldAlert className="text-gold w-10 h-10 mb-6" />
+              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Vida e Previdência</h3>
+              <p className="text-primary/70 font-sans text-sm mb-8 flex-grow">
+                Proteção financeira personalizada, previdência adulta e infantil, e cobertura contra acidentes.
+              </p>
+              <Link href="/produtos?cat=Vida e Previdência" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
+                Ver Opções <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Card 3 - Empresa */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 flex flex-col items-start shadow-sm hover:shadow-xl hover:border-gold/50 transition-all group">
+              <Building className="text-gold w-10 h-10 mb-6" />
+              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Empresa</h3>
+              <p className="text-primary/70 font-sans text-sm mb-8 flex-grow">
+                Seguro garantia, proteção patrimonial, soluções setoriais e convenções coletivas para sua empresa.
+              </p>
+              <Link href="/produtos?cat=Empresa" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
+                Ver Opções <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Card 4 - Automóvel */}
             <div className="bg-white border border-gray-200 p-6 lg:p-8 flex flex-col items-start shadow-sm hover:shadow-xl hover:border-gold/50 transition-all group">
               <Car className="text-gold w-10 h-10 mb-6" />
               <h3 className="font-serif text-2xl text-primary font-bold mb-4">Automóvel</h3>
               <p className="text-primary/70 font-sans text-sm mb-8 flex-grow">
-                Segurança 24h para seu veículo e frotas com coberturas personalizadas.
+                Frotas, táxi, caminhão, seminovos por assinatura e centro automotivo com garantia Porto.
               </p>
               <Link href="/produtos?cat=Automóvel" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
                 Ver Opções <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
+          </div>
 
-            {/* Card 3 */}
+          {/* Secondary Row */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+            {/* Card 5 - Residencial */}
             <div className="bg-white border border-gray-200 p-6 lg:p-8 flex flex-col items-start shadow-sm hover:shadow-xl hover:border-gold/50 transition-all group">
-              <Building className="text-gold w-10 h-10 mb-6" />
-              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Empresarial</h3>
+              <HomeIcon className="text-gold w-10 h-10 mb-6" />
+              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Residencial</h3>
               <p className="text-primary/70 font-sans text-sm mb-8 flex-grow">
-                Soluções robustas estruturadas para proteger o patrimônio e risco cibernético.
+                Proteção completa para casas, apartamentos e condomínios na cidade, praia ou campo.
               </p>
-              <Link href="/produtos?cat=Negócios" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
+              <Link href="/produtos?cat=Residencial" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
                 Ver Opções <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
 
-            {/* Card 4 */}
+            {/* Card 6 - Equipamentos e Tecnologia */}
             <div className="bg-white border border-gray-200 p-6 lg:p-8 flex flex-col items-start shadow-sm hover:shadow-xl hover:border-gold/50 transition-all group">
-              <ShieldAlert className="text-gold w-10 h-10 mb-6" />
-              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Seguro Garantia</h3>
+              <Smartphone className="text-gold w-10 h-10 mb-6" />
+              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Equipamentos</h3>
               <p className="text-primary/70 font-sans text-sm mb-8 flex-grow">
-                Garantia de cumprimento de obrigações contratuais e proteção máxima a terceiros.
+                Bikes, smartphones, tablets, notebooks e câmeras protegidos contra danos, roubo e furto.
               </p>
-              <Link href="/produtos?cat=Negócios" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
+              <Link href="/produtos?cat=Equipamentos" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
+                Ver Opções <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Card 7 - Soluções Financeiras */}
+            <div className="bg-white border border-gray-200 p-6 lg:p-8 flex flex-col items-start shadow-sm hover:shadow-xl hover:border-gold/50 transition-all group">
+              <DollarSign className="text-gold w-10 h-10 mb-6" />
+              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Soluções Financeiras</h3>
+              <p className="text-primary/70 font-sans text-sm mb-8 flex-grow">
+                Consórcios, cartão de crédito, financiamento e crédito com garantia de veículo.
+              </p>
+              <Link href="/produtos?cat=Soluções Financeiras" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
                 Ver Opções <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>

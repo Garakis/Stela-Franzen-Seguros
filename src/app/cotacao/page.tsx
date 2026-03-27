@@ -2,16 +2,18 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShieldAlert, Heart, Building, Car, DollarSign, ArrowRight, ArrowLeft, CheckSquare, Square } from "lucide-react";
+import { ShieldAlert, Heart, Building, Car, DollarSign, ArrowRight, ArrowLeft, CheckSquare, Square, Home, Smartphone } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
 // Base context data
 const categoriesData = [
-  { id: "Saúde", name: "Saúde & Odonto", icon: Heart, products: ["Saúde Empresarial", "Odonto Premium", "Saúde Ocupacional", "Petlove Saúde"] },
-  { id: "Vida", name: "Vida & Previdência", icon: ShieldAlert, products: ["Vida Individual", "Vida Mulher", "Previdência", "Previdência Infantil", "Acidentes Escolares"] },
-  { id: "Empresa", name: "Negócios & Empresas", icon: Building, products: ["Seguro Garantia", "Concessionárias", "Academias", "Clínicas", "Escolas", "Hotéis/Pousadas"] },
-  { id: "Automóvel", name: "Automóvel", icon: Car, products: ["Auto Empresarial", "Táxi", "Auto Mulher", "Seguro Caminhão", "Bike"] },
-  { id: "Financeiro", name: "Soluções Financeiras", icon: DollarSign, products: ["Consórcio Imóvel/Auto", "Cartão de Crédito", "Financiamento", "Capital de Giro"] },
+  { id: "Saúde", name: "Saúde", icon: Heart, products: ["Saúde Individual/Corp", "Odonto Premium", "Saúde Ocupacional", "Petlove Saúde"] },
+  { id: "Vida e Previdência", name: "Vida e Previdência", icon: ShieldAlert, products: ["Vida (Individual/Grupo/Emp)", "Vida Mulher", "Vida On", "Previdência (Adulto/Infantil)", "Acidentes Pessoais", "Acidentes Escolares"] },
+  { id: "Empresa", name: "Empresa", icon: Building, products: ["Empresarial Geral", "Seguro Garantia", "Máquinas e Equipamentos", "Setoriais Específicos", "Concessionárias", "Convenções Coletivas"] },
+  { id: "Automóvel", name: "Automóvel", icon: Car, products: ["Auto (Empresarial/Frota)", "Táxi", "Auto Mulher", "Seguro Caminhão", "Carros Seminovos (Assinatura)", "Centro Automotivo"] },
+  { id: "Residencial", name: "Residencial", icon: Home, products: ["Residencial (Habitual/Veraneio)", "Apartamentos", "Seguro Condomínio"] },
+  { id: "Equipamentos e Tecnologia", name: "Equipamentos e Tecnologia", icon: Smartphone, products: ["Seguro Bike", "Smartphone e Tablets", "Notebooks e Câmeras"] },
+  { id: "Soluções Financeiras", name: "Soluções Financeiras", icon: DollarSign, products: ["Consórcios (Imóvel/Auto/Pesados)", "Cartão de Crédito", "Financiamento e Crédito", "Crédito com Garantia de Veículo"] },
 ];
 
 function CotacaoContent() {
