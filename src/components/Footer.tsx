@@ -9,11 +9,11 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-2">
           <Link href="/" className="flex items-center mb-6">
             <div className="relative w-48 sm:w-64 h-16 sm:h-20">
-              <Image 
-                src="/logo.png" 
-                alt="Stela Franzen Seguros Logo" 
-                fill 
-                className="object-contain object-left" 
+              <Image
+                src="/logo.png"
+                alt="Stela Franzen Seguros Logo"
+                fill
+                className="object-contain object-left"
               />
             </div>
           </Link>
@@ -24,7 +24,7 @@ export default function Footer() {
             <Mail className="hover:text-white transition-colors cursor-pointer" />
           </div>
         </div>
-        
+
         <div>
           <h4 className="text-gold font-bold font-sans text-sm tracking-wide uppercase mb-8">Unidade SJC</h4>
           <address className="text-white/70 font-sans text-sm not-italic space-y-4">
@@ -34,11 +34,11 @@ export default function Footer() {
             </p>
             <p className="flex items-center gap-3">
               <Phone className="text-gold shrink-0 w-5 h-5" />
-              <span>(12) 3456-7890</span>
+              <span>(12) 99739-7129</span>
             </p>
           </address>
         </div>
-        
+
         <div className="flex flex-col gap-6">
           <h4 className="text-gold font-bold font-sans text-sm tracking-wide uppercase">Links Rápidos</h4>
           <ul className="space-y-4">
@@ -48,7 +48,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      
+
       <div className="max-w-screen-2xl mx-auto px-4 md:px-8 py-8 border-t border-gold/10 text-center flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-white/40 font-sans text-xs tracking-widest uppercase">
           © {new Date().getFullYear()} Stela Franzen Seguros. Todos os direitos reservados.
