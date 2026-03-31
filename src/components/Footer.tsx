@@ -54,7 +54,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Stela Franzen Seguros. Todos os direitos reservados.
         </p>
         <p className="text-white/40 font-sans text-xs tracking-widest">
-          CNPJ: 00.000.000/0001-00 | SUSEP: 00000.000000/0000-00
+          CNPJ: 03.302.929/0001-63 | SUSEP: 202097283
         </p>
       </div>
     </footer>

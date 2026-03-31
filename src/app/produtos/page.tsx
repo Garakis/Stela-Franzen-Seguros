@@ -39,9 +39,9 @@ import {
 
 // Destaques (Top Carousel)
 const highlights = [
-  { id: 1, title: "Seguro Auto Porto", type: "Afiliado", icon: Car, desc: "Proteção completa para seu veículo com os melhores serviços.", link: "#" },
-  { id: 2, title: "Seguro Viagem", type: "Afiliado", icon: Briefcase, desc: "Tranquilidade internacional ou nacional com coberturas exclusivas.", link: "#" },
-  { id: 3, title: "Equipamentos Portáteis", type: "Afiliado", icon: Smartphone, desc: "Seu celular, tablet e notebook protegidos contra falhas, quebras e roubos.", link: "#" },
+  { id: 1, title: "Seguro Auto Porto", type: "Afiliado", icon: Car, desc: "Proteção completa para seu veículo com os melhores serviços.", link: "https://www.portoseguro.com.br/loja/seguro-auto/placa-do-veiculo?link_uuid=af1d1818-60a3-43c6-a197-284b45b14da9&social_media=OTHERS&source=NEW_ENGINE&susep=38156J&origem=gerador-link_corretor&utm_id=af1d1818-60a3-43c6-a197-284b45b14da9&utm_source=gerador-link-corretor&utm_medium=others&utm_campaign=38156J&utm_content=seguroauto" },
+  { id: 2, title: "Seguro Viagem", type: "Afiliado", icon: Briefcase, desc: "Tranquilidade internacional ou nacional com coberturas exclusivas.", link: "https://www.portoseguro.com.br/loja/seguro-viagem?link_uuid=1c0d9304-ee4d-4fb9-95d6-7f1ec2447cd5&social_media=OTHERS&source=NEW_ENGINE&susep=38156J&origem=gerador-link_corretor&utm_id=1c0d9304-ee4d-4fb9-95d6-7f1ec2447cd5&utm_source=gerador-link-corretor&utm_medium=others&utm_campaign=38156J&utm_content=viagem" },
+  { id: 3, title: "Equipamentos Portáteis", type: "Afiliado", icon: Smartphone, desc: "Seu celular, tablet e notebook protegidos contra falhas, quebras e roubos.", link: "https://www.portoseguro.com.br/equipamentos-portateis/corretor?link_uuid=81058a83-2d39-4d16-bcf6-e949a0cceecd&social_media=OTHERS&source=NEW_ENGINE&susep=38156J&origem=gerador-link_corretor&utm_id=81058a83-2d39-4d16-bcf6-e949a0cceecd&utm_source=gerador-link-corretor&utm_medium=others&utm_campaign=38156J&utm_content=equipamentosportateis" },
 ];
 
 interface Product {
@@ -174,9 +174,9 @@ function CatalogContent() {
                     <p className="text-primary/70 font-sans text-sm mb-6 flex-grow">
                       {product.desc}
                     </p>
-                    <Link href={product.link} className="inline-flex items-center gap-2 text-gold font-bold uppercase text-xs tracking-widest hover:gap-4 transition-all w-full pt-4 border-t border-gray-100">
+                    <a href={product.link} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-gold font-bold uppercase text-xs tracking-widest hover:gap-4 transition-all w-full pt-4 border-t border-gray-100">
                       Simular Online <ExternalLink className="w-4 h-4 ml-auto" />
-                    </Link>
+                    </a>
                 </div>
               );
             })}
