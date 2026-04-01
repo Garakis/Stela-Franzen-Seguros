@@ -32,10 +32,14 @@ export default function Footer() {
               <MapPin className="text-gold shrink-0 w-5 h-5" />
               <span>Edifício Oregon, Jd. Aquarius<br />São José dos Campos - SP</span>
             </p>
-            <p className="flex items-center gap-3">
-              <Phone className="text-gold shrink-0 w-5 h-5" />
-              <span>(12) 99739-7129</span>
-            </p>
+            <div className="flex items-start gap-3">
+              <Phone className="text-gold shrink-0 w-5 h-5 mt-0.5" />
+              <div className="flex flex-col space-y-1">
+                <span><strong className="font-medium text-white">Cálculos:</strong> (12) 99739-7129</span>
+                <span><strong className="font-medium text-white">Benefícios:</strong> (12) 99700-8437</span>
+                <span><strong className="font-medium text-white">Geral:</strong> (12) 99772-1187</span>
+              </div>
+            </div>
           </address>
         </div>
 
@@ -54,7 +58,7 @@ export default function Footer() {
           © {new Date().getFullYear()} Stela Franzen Seguros. Todos os direitos reservados.
         </p>
         <p className="text-white/40 font-sans text-xs tracking-widest">
-          CNPJ: 03.302.929/0001-63 | SUSEP: 202097283
+          CNPJ: 03.302.929/0001-63
         </p>
       </div>
     </footer>

@@ -25,10 +25,9 @@ function CotacaoContent() {
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
-    documento: "",
-    whatsapp: "",
     mensagem: ""
   });
+  const [isSending, setIsSending] = useState(false);
 
   // Auto-bypass logic via URL State Management
   useEffect(() => {
@@ -60,10 +59,29 @@ function CotacaoContent() {
     }
   };
 
-  const submitForm = (e: React.FormEvent) => {
+  const submitForm = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSending(true);
     const prodsStr = selectedProducts.join(", ");
-    const text = `Olá! Quero solicitar uma proposta para: *${prodsStr}*. Meu nome é ${formData.nome}. Contato: ${formData.whatsapp}. Mensagem: ${formData.mensagem}`;
+    
+    try {
+      await fetch('/api/contato', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nome: formData.nome,
+          email: formData.email,
+          mensagem: formData.mensagem,
+          produtos: prodsStr
+        }),
+      });
+    } catch (err) {
+      console.error('Error sending email:', err);
+    } finally {
+      setIsSending(false);
+    }
+
+    const text = `Olá! Quero solicitar uma proposta para: *${prodsStr}*. Meu nome é ${formData.nome}. Email: ${formData.email}. Mensagem: ${formData.mensagem}`;
     const url = `https://wa.me/5512997397129?text=${encodeURIComponent(text)}`;
     window.open(url, "_blank");
   };
@@ -184,19 +202,8 @@ function CotacaoContent() {
                         <input type="text" required value={formData.nome} onChange={e => updateForm("nome", e.target.value)} className="w-full border-b-2 border-gray-200 bg-transparent py-2 outline-none focus:border-gold transition-colors text-primary font-medium" placeholder="Como devemos chamá-lo?" />
                       </div>
                       <div>
-                        <label className="block text-primary font-sans text-xs font-bold mb-2 uppercase tracking-widest">WhatsApp</label>
-                        <input type="tel" required value={formData.whatsapp} onChange={e => updateForm("whatsapp", e.target.value)} className="w-full border-b-2 border-gray-200 bg-transparent py-2 outline-none focus:border-gold transition-colors text-primary font-medium" placeholder="(00) 00000-0000" />
-                      </div>
-                    </div>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
                         <label className="block text-primary font-sans text-xs font-bold mb-2 uppercase tracking-widest">Email</label>
-                        <input type="email" value={formData.email} onChange={e => updateForm("email", e.target.value)} className="w-full border-b-2 border-gray-200 bg-transparent py-2 outline-none focus:border-gold transition-colors text-primary font-medium" placeholder="seu@email.com" />
-                      </div>
-                      <div>
-                        <label className="block text-primary font-sans text-xs font-bold mb-2 uppercase tracking-widest">CPF ou CNPJ</label>
-                        <input type="text" value={formData.documento} onChange={e => updateForm("documento", e.target.value)} className="w-full border-b-2 border-gray-200 bg-transparent py-2 outline-none focus:border-gold transition-colors text-primary font-medium" placeholder="Opcional neste momento" />
+                        <input type="email" required value={formData.email} onChange={e => updateForm("email", e.target.value)} className="w-full border-b-2 border-gray-200 bg-transparent py-2 outline-none focus:border-gold transition-colors text-primary font-medium" placeholder="seu@email.com" />
                       </div>
                     </div>
 
@@ -236,9 +243,10 @@ function CotacaoContent() {
               <button 
                 type="button" 
                 onClick={submitForm}
-                className="flex items-center gap-2 font-bold uppercase text-xs tracking-widest px-8 py-4 rounded transition-all bg-gold text-white shadow-lg hover:brightness-110 hover:shadow-xl"
+                disabled={isSending}
+                className={`flex items-center gap-2 font-bold uppercase text-xs tracking-widest px-8 py-4 rounded transition-all shadow-lg ${isSending ? 'bg-gold/70 cursor-wait text-white/80' : 'bg-gold hover:brightness-110 hover:shadow-xl text-white'}`}
               >
-                Finalizar via WhatsApp <ArrowRight className="w-4 h-4" />
+                {isSending ? "Enviando..." : "Finalizar via WhatsApp"} <ArrowRight className="w-4 h-4" />
               </button>
             )}
           </div>
