@@ -71,12 +71,14 @@ const products: Product[] = [
   { id: 206, title: "Acidentes Escolares", category: "Vida e Previdência", icon: GraduationCap, desc: "Tranquilidade para pais e escolas com proteção para alunos dentro e fora do ensino." },
 
   // ── Empresa ──
-  { id: 301, title: "Empresarial Geral", category: "Empresa", icon: Building, desc: "Eficiência e economia para proteger o patrimônio da sua empresa." },
-  { id: 302, title: "Seguro Garantia", category: "Empresa", icon: Landmark, desc: "Cumprimento de contratos, licitações e exigências legais com segurança." },
-  { id: 303, title: "Máquinas e Equipamentos", category: "Empresa", icon: Wrench, desc: "Proteção para equipamentos portáteis, industriais e de construção da sua empresa." },
-  { id: 304, title: "Setoriais Específicos", category: "Empresa", icon: Dumbbell, desc: "Soluções para Academias, Escolas, Bares, Clínicas, Estética, Hotéis e Petshops." },
-  { id: 305, title: "Concessionárias", category: "Empresa", icon: Car, desc: "Proteção especializada cobrindo desde o pátio até o test-drive." },
-  { id: 306, title: "Convenções Coletivas", category: "Empresa", icon: Users, desc: "Seguro de vida e bem-estar obrigatório para cumprimento de acordos sindicais." },
+  { id: 301, title: "Empresarial Geral", category: "Empresarial", icon: Building, desc: "Eficiência e economia para proteger o patrimônio da sua empresa." },
+  { id: 302, title: "Garantia Contratual", category: "Empresarial", icon: Landmark, desc: "Garante a execução do seu contrato." },
+  { id: 303, title: "Máquinas e Equipamentos", category: "Empresarial", icon: Wrench, desc: "Proteção para equipamentos portáteis, industriais e de construção da sua empresa." },
+  { id: 304, title: "Setoriais Específicos", category: "Empresarial", icon: Dumbbell, desc: "Soluções para Academias, Escolas, Bares, Clínicas, Estética, Hotéis e Petshops." },
+  { id: 305, title: "Concessionárias", category: "Empresarial", icon: Car, desc: "Proteção especializada cobrindo desde o pátio até o test-drive." },
+  { id: 306, title: "Convenções Coletivas", category: "Empresarial", icon: Users, desc: "Seguro de vida e bem-estar obrigatório para cumprimento de acordos sindicais." },
+  { id: 307, title: "Riscos de Engenharia", category: "Empresarial", icon: Building, desc: "Proteção completa para obras civis contra diversos tipos de acidentes." },
+  { id: 308, title: "RC Obras", category: "Empresarial", icon: ShieldAlert, desc: "Responsabilidade civil para construtores, protegendo contra danos a terceiros." },
 
   // ── Automóvel ──
   { id: 401, title: "Auto (Empresarial/Frota)", category: "Automóvel", icon: Car, desc: "Veículos da sua empresa protegidos com benefícios exclusivos e assistência ágil." },
@@ -103,7 +105,7 @@ const products: Product[] = [
   { id: 704, title: "Crédito com Garantia de Veículo", category: "Soluções Financeiras", icon: Car, desc: "Dinheiro rápido no bolso usando seu carro como garantia." },
 ];
 
-const categories = ["Todos", "Saúde", "Vida e Previdência", "Empresa", "Automóvel", "Residencial", "Equipamentos e Tecnologia", "Soluções Financeiras"];
+const categories = ["Todos", "Saúde", "Vida e Previdência", "Empresarial", "Automóvel", "Residencial", "Equipamentos e Tecnologia", "Soluções Financeiras"];
 
 const productDetails = [
   {"id":"saude-individual-corp","titulo":"Saúde Individual/Corp","vantagens":["Rede Referenciada (Einstein/Sírio)","Programas de Saúde Preventiva","Porto Cuida (Descontos em farmácias)","Telemedicina 24h","Reembolso Ágil"]},
@@ -117,9 +119,11 @@ const productDetails = [
   {"id":"acidentes-pessoais","titulo":"Acidentes Pessoais","vantagens":["Proteção Mundial 24h","Diária de Internação Hospitalar","Baixo Custo para Autônomos"]},
   {"id":"acidentes-escolares","titulo":"Acidentes Escolares","vantagens":["Cobertura em Passeios/Excursões","Reembolso Médico e Odonto","Tranquilidade para Pais e Escolas"]},
   {"id":"empresarial-geral","titulo":"Empresarial Geral","vantagens":["Multirriscos (Incêndio/Roubo)","Responsabilidade Civil","Assistência 24h (Chaveiro/Reparos)"]},
-  {"id":"seguro-garantia","titulo":"Seguro Garantia","vantagens":["Preservação de Capital de Giro","Aceitação em Licitações/Judicial","Emissão Digital Ágil"]},
+  {"id":"garantia-contratual","titulo":"Garantia Contratual","vantagens":["Garantia Execução fiscal","adiantamento de pagamento","Licitante","entre tantas outras."]},
   {"id":"maquinas-equipamentos","titulo":"Máquinas e Equipamentos","vantagens":["Proteção Agrícola/Industrial","Cobertura de Danos Elétricos","Opção de Lucros Cessantes"]},
   {"id":"setoriais-especificos","titulo":"Setoriais Específicos","vantagens":["Soluções p/ Academias/Escolas/Clínicas","Cobertura de Deterioração de Estoque","Responsabilidade Profissional"]},
+  {"id":"riscos-engenharia","titulo":"Riscos de Engenharia","vantagens":["Danos físicos à obra","Roubo e furto qualificado","Danos a materiais e equipamentos"]},
+  {"id":"rc-obras","titulo":"RC Obras","vantagens":["Danos corporais a terceiros","Danos materiais a terceiros","Lucros cessantes de terceiros"]},
   {"id":"concessionarias","titulo":"Concessionárias","vantagens":["Proteção de Pátio e Estoque","RC Test-Drive","Danos por Granizo/Alagamento"]},
   {"id":"convencoes-coletivas","titulo":"Convenções Coletivas","vantagens":["Conformidade com Sindicatos (CCT)","Auxílio Alimentação Incluso","Gestão Simples de Movimentação"]},
   {"id":"auto-empresarial-frota","titulo":"Auto (Empresarial/Frota)","vantagens":["Guincho sem limite de KM","Carro Reserva Utilitário","Gestão Centralizada de Frota"]},

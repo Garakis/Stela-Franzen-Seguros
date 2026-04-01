@@ -39,7 +39,8 @@ export default function Home() {
               <ShieldAlert className="text-gold w-10 h-10 mb-6" />
               <h3 className="font-serif text-2xl text-primary font-bold mb-4">Vida e Previdência</h3>
               <p className="text-primary/70 font-sans text-sm mb-8 flex-grow">
-                Proteção financeira personalizada, previdência adulta e infantil, e cobertura contra acidentes.
+                Vida empresarial e individual, proteção para seus funcionários e sua família.<br /><br />
+                Previdência: sua aposentadoria pode ser programada com muita antecedência. Pense no seu futuro.
               </p>
               <Link href="/produtos?cat=Vida e Previdência" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
                 Ver Opções <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -49,11 +50,11 @@ export default function Home() {
             {/* Card 3 - Empresa */}
             <div className="bg-white border border-gray-200 p-6 lg:p-8 flex flex-col items-start shadow-sm hover:shadow-xl hover:border-gold/50 transition-all group">
               <Building className="text-gold w-10 h-10 mb-6" />
-              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Empresa</h3>
+              <h3 className="font-serif text-2xl text-primary font-bold mb-4">Empresarial</h3>
               <p className="text-primary/70 font-sans text-sm mb-8 flex-grow">
-                Seguro garantia, proteção patrimonial, soluções setoriais e convenções coletivas para sua empresa.
+                Proteção para sua empresa/patrimonial. Você administra, nós lhe damos tranquilidade e segurança.
               </p>
-              <Link href="/produtos?cat=Empresa" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
+              <Link href="/produtos?cat=Empresarial" className="text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:text-gold transition-colors mt-auto">
                 Ver Opções <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -128,10 +129,10 @@ export default function Home() {
               <span className="font-sans text-gold text-xs uppercase tracking-widest mb-6 block font-bold border-l-2 border-gold pl-3">Tradição & Confiança</span>
               <h2 className="font-serif text-4xl md:text-5xl mb-8 leading-tight font-bold">História Esculpida com Excelência</h2>
               <p className="text-lg text-white/80 leading-relaxed mb-6 font-sans">
-                Fundada sob princípios de lealdade e precisão técnica, a Stela Franzen protagonizou a evolução do mercado segurador local provendo segurança real para corporações e indivíduos de alto patrimônio.
+                Fundada sob princípios de lealdade e precisão técnica, a Stela Franzen protagonizou a evolução do mercado segurador local provendo segurança real para corporações e pessoas físicas.
               </p>
               <p className="text-lg text-white/80 leading-relaxed mb-8 font-sans">
-                Nossa consultoria unifica vantagens de grandes holdings ao esmero de uma butique técnica, avaliando riscos minuciosamente para garantir coberturas que jamais falham quando requisitadas.
+                Nossa consultoria unifica vantagens de grandes holdings ao esmero de uma butique técnica, avaliando riscos minuciosamente para garantir coberturas que lhe dão total tranquilidade quando contratadas.
               </p>
               <Link href="/produtos" className="inline-flex items-center gap-2 text-gold font-bold uppercase text-xs tracking-widest hover:gap-4 transition-all">
                 Explorar Soluções <ArrowRight className="w-4 h-4" />
