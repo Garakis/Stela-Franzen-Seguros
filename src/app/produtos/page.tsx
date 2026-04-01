@@ -34,6 +34,9 @@ import {
   Stethoscope,
   ChevronLeft,
   ChevronRight,
+  X,
+  CheckCircle,
+  HelpCircle,
   type LucideIcon,
 } from "lucide-react";
 
@@ -102,12 +105,78 @@ const products: Product[] = [
 
 const categories = ["Todos", "Saúde", "Vida e Previdência", "Empresa", "Automóvel", "Residencial", "Equipamentos e Tecnologia", "Soluções Financeiras"];
 
+const productDetails = [
+  {"id":"saude-individual-corp","titulo":"Saúde Individual/Corp","vantagens":["Rede Referenciada (Einstein/Sírio)","Programas de Saúde Preventiva","Porto Cuida (Descontos em farmácias)","Telemedicina 24h","Reembolso Ágil"]},
+  {"id":"odonto-premium","titulo":"Odonto Premium","vantagens":["Rede Nacional","Autorização Online Imediata","Cobertura Estética e Ortodontia","Descontos em Medicamentos"]},
+  {"id":"saude-ocupacional","titulo":"Saúde Ocupacional","vantagens":["Gestão de PCMSO/PGR","Envio para eSocial","Rede de Clínicas Nacional","Consultoria Técnica"]},
+  {"id":"petlove-saude","titulo":"Petlove Saúde","vantagens":["Maior rede veterinária do Brasil","Microchipagem Gratuita","Atendimento em Domicílio","Cobertura de Vacinas e Cirurgias"]},
+  {"id":"vida-individual-grupo","titulo":"Vida (Individual/Grupo/Emp)","vantagens":["Cobertura Doenças Graves","Assistência Funeral Completa","Sorteios Mensais em Dinheiro","DIT para Profissionais Liberais"]},
+  {"id":"vida-mulher","titulo":"Vida Mulher","vantagens":["Indenização p/ Câncer de Mama/Útero","2ª Opinião Médica Internacional","Assistência Residencial Inclusa"]},
+  {"id":"vida-on","titulo":"Vida On","vantagens":["Contratação 100% Digital","Sem Burocracia/Exames","Assistência Viagem","Preço Fixo Acessível"]},
+  {"id":"previdencia-adulto-infantil","titulo":"Previdência (Adulto/Infantil)","vantagens":["Gestão Profissional Porto","Sucessão Patrimonial sem Inventário","Eficiência Fiscal (PGBL)","Fundos Multimercados"]},
+  {"id":"acidentes-pessoais","titulo":"Acidentes Pessoais","vantagens":["Proteção Mundial 24h","Diária de Internação Hospitalar","Baixo Custo para Autônomos"]},
+  {"id":"acidentes-escolares","titulo":"Acidentes Escolares","vantagens":["Cobertura em Passeios/Excursões","Reembolso Médico e Odonto","Tranquilidade para Pais e Escolas"]},
+  {"id":"empresarial-geral","titulo":"Empresarial Geral","vantagens":["Multirriscos (Incêndio/Roubo)","Responsabilidade Civil","Assistência 24h (Chaveiro/Reparos)"]},
+  {"id":"seguro-garantia","titulo":"Seguro Garantia","vantagens":["Preservação de Capital de Giro","Aceitação em Licitações/Judicial","Emissão Digital Ágil"]},
+  {"id":"maquinas-equipamentos","titulo":"Máquinas e Equipamentos","vantagens":["Proteção Agrícola/Industrial","Cobertura de Danos Elétricos","Opção de Lucros Cessantes"]},
+  {"id":"setoriais-especificos","titulo":"Setoriais Específicos","vantagens":["Soluções p/ Academias/Escolas/Clínicas","Cobertura de Deterioração de Estoque","Responsabilidade Profissional"]},
+  {"id":"concessionarias","titulo":"Concessionárias","vantagens":["Proteção de Pátio e Estoque","RC Test-Drive","Danos por Granizo/Alagamento"]},
+  {"id":"convencoes-coletivas","titulo":"Convenções Coletivas","vantagens":["Conformidade com Sindicatos (CCT)","Auxílio Alimentação Incluso","Gestão Simples de Movimentação"]},
+  {"id":"auto-empresarial-frota","titulo":"Auto (Empresarial/Frota)","vantagens":["Guincho sem limite de KM","Carro Reserva Utilitário","Gestão Centralizada de Frota"]},
+  {"id":"taxi","titulo":"Táxi","vantagens":["Diária de Lucros Cessantes","Assistência Ágil 24h","Cobertura de Passageiros"]},
+  {"id":"auto-mulher","titulo":"Auto Mulher","vantagens":["Troca de Pneus Inclusa","Assistência Residencial Estendida","Atendimento Personalizado"]},
+  {"id":"seguro-caminhao","titulo":"Seguro Caminhão","vantagens":["Guinchos Extra Pesados","Proteção de Carga","Assistência ao Estradista"]},
+  {"id":"assinatura-carro-facil","titulo":"Carros Seminovos (Assinatura)","vantagens":["IPVA e Seguro Inclusos","Manutenção Preventiva Paga","Carro Reserva e Tag Porto"]},
+  {"id":"centro-automotivo","titulo":"Centro Automotivo","vantagens":["Garantia de Peças Originais","Check-up Gratuito p/ Segurados","Parcelamento via Cartão Porto"]},
+  {"id":"residencial-habitual-veraneio","titulo":"Residencial (Habitual/Veraneio)","vantagens":["Mão de obra p/ Eletrodomésticos","Check-up Lar (Calhas/Elétrica)","Proteção contra Danos Elétricos"]},
+  {"id":"apartamentos","titulo":"Apartamentos","vantagens":["Cobertura de Conteúdo Interno","RC Familiar/Vizinhos","Assistência 24h Prédios"]},
+  {"id":"seguro-condominio","titulo":"Seguro Condomínio","vantagens":["RC Síndico e Administradora","Danos Estruturais","Assistência Áreas Comuns"]},
+  {"id":"seguro-bike","titulo":"Seguro Bike","vantagens":["Danos ao Terceiro","Extensão Internacional","Proteção no Transporte"]},
+  {"id":"smartphone-tablets","titulo":"Smartphone e Tablets","vantagens":["Roubo e Furto Qualificado","Quedas Acidentais","Danos Elétricos"]},
+  {"id":"notebooks-cameras","titulo":"Notebooks e Câmeras","vantagens":["Proteção de Equipamento de Trabalho","Uso Profissional e Lazer","Cobertura em Viagens"]},
+  {"id":"consorcios","titulo":"Consórcios (Imóvel/Auto/Pesados)","vantagens":["Taxa Adm Competitiva (Sem Juros)","Poder de Compra à Vista","Lances Embutidos"]},
+  {"id":"cartao-porto-bank","titulo":"Cartão de Crédito","vantagens":["Programa de Pontos PortoPlus","Tag Porto Grátis","Desconto na Renovação do Seguro"]},
+  {"id":"financiamento-credito","titulo":"Financiamento e Crédito","vantagens":["Crédito com Garantia de Veículo (CGI)","Taxas Reduzidas","Capital de Giro p/ Empresas"]}
+];
+
 function CatalogContent() {
   const [activeTab, setActiveTab] = useState("Todos");
   const searchParams = useSearchParams();
   const scrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(false);
+  
+  const [activeModalHash, setActiveModalHash] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      setActiveModalHash(hash || null);
+    };
+    handleHash();
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && activeModalHash) {
+        window.history.pushState("", document.title, window.location.pathname + window.location.search);
+        setActiveModalHash(null);
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [activeModalHash]);
+
+  const openModal = (hashId: string) => {
+    window.location.hash = hashId;
+  };
+
+  const closeModal = () => {
+    window.history.pushState("", document.title, window.location.pathname + window.location.search);
+    setActiveModalHash(null);
+  };
 
   const checkScroll = useCallback(() => {
     const el = scrollRef.current;
@@ -242,6 +311,9 @@ function CatalogContent() {
           <AnimatePresence>
             {filteredProducts.map(product => {
               const Icon = product.icon;
+              const detail = productDetails.find(d => d.titulo === product.title);
+              const hashId = detail?.id || product.id.toString();
+
               return (
                 <motion.div
                   key={`prod-${product.id}`}
@@ -250,27 +322,104 @@ function CatalogContent() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.2 }}
-                  className="bg-white p-5 sm:p-6 border border-gray-200 shadow-sm flex flex-col items-start hover:border-primary/40 hover:shadow-lg transition-all duration-200 group rounded"
+                  onClick={() => openModal(hashId)}
+                  className="bg-white p-5 sm:p-6 border border-gray-200 shadow-sm flex flex-col items-start hover:border-primary/40 hover:shadow-lg transition-all duration-200 group rounded cursor-pointer relative"
                 >
-                  <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-4 mb-4 pointer-events-none">
                     <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
                     <h3 className="font-serif text-lg text-primary font-bold leading-tight">{product.title}</h3>
                   </div>
-                  <p className="text-primary/70 font-sans text-xs mb-6 flex-grow line-clamp-2">
+                  <p className="text-primary/70 font-sans text-xs mb-6 flex-grow line-clamp-2 pointer-events-none">
                     {product.desc}
                   </p>
                   
-                  <Link href={`/cotacao?prod=${encodeURIComponent(product.title)}`} className="inline-flex items-center gap-2 text-primary font-bold uppercase text-[10px] tracking-widest group-hover:text-gold transition-colors w-full pt-4 border-t border-gray-100">
-                    Solicitar Proposta <ExternalLink className="w-3 h-3 ml-auto" />
-                  </Link>
+                  <div className="inline-flex items-center gap-2 text-primary font-bold uppercase text-[10px] tracking-widest group-hover:text-gold transition-colors w-full pt-4 border-t border-gray-100 mt-auto pointer-events-none">
+                    Ver Detalhes <ExternalLink className="w-3 h-3 ml-auto" />
+                  </div>
                 </motion.div>
               );
             })}
           </AnimatePresence>
         </motion.div>
       </div>
+
+      {/* Dynamic Modal */}
+      <AnimatePresence>
+        {activeModalHash && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={closeModal}
+              className="absolute inset-0 bg-primary/60 backdrop-blur-sm cursor-pointer"
+            />
+            <motion.div 
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.95 }}
+              className="bg-white rounded-xl shadow-2xl relative z-10 w-full max-w-lg overflow-hidden flex flex-col max-h-[90vh]"
+            >
+              {(() => {
+                const modalData = productDetails.find(p => p.id === activeModalHash);
+                const originalProduct = products.find(p => p.title === modalData?.titulo);
+                const Icon = originalProduct?.icon || HelpCircle; // Fallback missing icon
+                const descGeral = originalProduct?.desc || "";
+
+                if (!modalData) return <div className="p-8 text-center text-primary">Produto não encontrado.</div>;
+
+                return (
+                  <>
+                    <div className="bg-primary p-6 md:p-8 relative">
+                      <button 
+                        onClick={closeModal}
+                        className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 rounded-full transition-colors"
+                      >
+                        <X className="w-5 h-5" />
+                      </button>
+                      <div className="flex items-center gap-4 text-white mb-2">
+                        <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center">
+                           <Icon className="w-5 h-5 text-gold" />
+                        </div>
+                        <h2 className="font-serif text-2xl font-bold">{modalData.titulo}</h2>
+                      </div>
+                      <p className="text-white/80 font-sans text-sm mt-3">{descGeral}</p>
+                    </div>
+
+                    <div className="p-6 md:p-8 overflow-y-auto w-full">
+                      <h3 className="font-sans text-xs uppercase tracking-widest text-primary/60 font-bold mb-4">Principais Vantagens</h3>
+                      <ul className="space-y-4">
+                        {modalData.vantagens.map((vantagem, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+                            <span className="text-primary font-sans text-sm font-medium">{vantagem}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="p-6 bg-gray-50 border-t border-gray-100">
+                      <Link 
+                        href={`/cotacao?prod=${encodeURIComponent(modalData.titulo)}`}
+                        onClick={(e) => {
+                          // Allow natural navigation, closeModal manually isn't strictly necessary for Next routing 
+                          // but clears hash state.
+                          closeModal();
+                        }}
+                        className="w-full py-4 bg-gold text-white rounded font-bold uppercase tracking-widest text-xs flex items-center justify-center gap-2 hover:brightness-110 shadow-md hover:shadow-lg transition-all"
+                      >
+                        Solicitar Cotação Agora <ExternalLink className="w-4 h-4" />
+                      </Link>
+                    </div>
+                  </>
+                );
+              })()}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
