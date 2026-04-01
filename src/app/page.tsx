@@ -16,7 +16,7 @@ export default function Home() {
       <section className="py-24 bg-white border-t border-b border-gray-100 w-full relative">
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
           <div className="text-center mb-16">
-            <span className="font-sans text-primary text-xs uppercase tracking-widest mb-4 block font-bold">Expertise</span>
+            <span className="font-sans text-primary text-sm sm:text-base md:text-lg uppercase tracking-[0.3em] mb-4 block font-bold">Expertise</span>
             <h2 className="font-serif text-4xl md:text-5xl text-primary font-bold">Soluções em Seguros</h2>
             <div className="w-24 h-1 bg-gold mx-auto mt-6"></div>
           </div>

@@ -28,7 +28,7 @@ export default function Header() {
       <div className="max-w-screen-2xl mx-auto px-4 md:px-8 py-3 md:py-4 flex justify-between items-center">
         {/* Raw Logo - No circular mask, no text */}
         <Link href="/" className="flex items-center">
-          <div className="relative w-48 sm:w-64 h-12 sm:h-16">
+          <div className="relative w-56 sm:w-80 h-14 sm:h-20 transition-all duration-300">
             <Image 
               src="/logo.png" 
               alt="Stela Franzen Seguros Logo" 

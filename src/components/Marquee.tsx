@@ -12,7 +12,7 @@ export default function Marquee() {
   return (
     <section className="py-24 bg-surface-dim overflow-hidden w-full select-none">
       <div className="container mx-auto px-6 md:px-12 mb-16">
-        <h2 className="font-serif text-3xl text-primary text-center">Trabalhamos com as Melhores Companhias do Mercado</h2>
+        <h2 className="font-serif text-3xl text-primary text-center">Trabalhamos com as Melhores Seguradoras do Mercado</h2>
       </div>
       <div className="relative flex py-10 overflow-hidden w-full">
         <div className="flex animate-marquee whitespace-nowrap gap-4 items-center w-max hover:[animation-play-state:paused]">
