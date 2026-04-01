@@ -147,26 +147,59 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl text-primary font-bold">O Que Dizem Nossos Clientes</h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white border border-gray-200 p-6 lg:p-10 hover:border-gold/40 transition-colors shadow-sm relative">
-              <Quote className="absolute top-8 right-8 text-gold/20 w-16 h-16" />
-              <div className="flex text-gold mb-6 gap-1">
-                {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
+          <div className="w-full -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex gap-6 pb-8 overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full lg:grid lg:grid-cols-4 lg:overflow-x-visible items-stretch">
+              <div className="snap-center min-w-[85vw] sm:min-w-[350px] lg:min-w-0 bg-white border border-gray-200 p-6 lg:p-8 hover:border-gold/40 transition-colors shadow-sm relative flex flex-col justify-between">
+                <Quote className="absolute top-6 right-6 text-gold/10 w-12 h-12" />
+                <div>
+                  <div className="flex text-gold mb-6 gap-1">
+                    {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
+                  </div>
+                  <p className="text-primary/80 font-serif italic text-base lg:text-sm xl:text-base mb-8 relative z-10 leading-relaxed">
+                    &quot;A segurança estruturou a fundação do nosso grupo. A agilidade da Stela e sua precisão foram incomparáveis na nossa apólice matriz.&quot;
+                  </p>
+                </div>
+                <p className="text-primary font-bold font-sans uppercase text-[10px] sm:text-xs tracking-wide">— Roberto M.</p>
               </div>
-              <p className="text-primary/80 font-serif italic text-lg mb-8 relative z-10 leading-relaxed">
-                &quot;A segurança estruturou a fundação do nosso grupo empresarial. A agilidade da Stela e sua precisão foram incomparáveis na gestão da nossa apólice matriz.&quot;
-              </p>
-              <p className="text-primary font-bold font-sans uppercase text-xs tracking-wide">— Roberto M., CEO Indústria Automotiva</p>
-            </div>
-            <div className="bg-white border border-gray-200 p-6 lg:p-10 hover:border-gold/40 transition-colors shadow-sm relative">
-               <Quote className="absolute top-8 right-8 text-gold/20 w-16 h-16" />
-              <div className="flex text-gold mb-6 gap-1">
-                {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
+
+              <div className="snap-center min-w-[85vw] sm:min-w-[350px] lg:min-w-0 bg-white border border-gray-200 p-6 lg:p-8 hover:border-gold/40 transition-colors shadow-sm relative flex flex-col justify-between">
+                <Quote className="absolute top-6 right-6 text-gold/10 w-12 h-12" />
+                <div>
+                  <div className="flex text-gold mb-6 gap-1">
+                    {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
+                  </div>
+                  <p className="text-primary/80 font-serif italic text-base lg:text-sm xl:text-base mb-8 relative z-10 leading-relaxed">
+                    &quot;Confio o seguro saúde da minha família e diretores a Stela Franzen há décadas. Atendimento ágil e ultra customizado!&quot;
+                  </p>
+                </div>
+                <p className="text-primary font-bold font-sans uppercase text-[10px] sm:text-xs tracking-wide">— Dra. Helena C.</p>
               </div>
-              <p className="text-primary/80 font-serif italic text-lg mb-8 relative z-10 leading-relaxed">
-                &quot;Confio o seguro saúde da minha família e de todos os meus diretores a Stela Franzen a mais de uma década. Atendimento ultra customizado.&quot;
-              </p>
-              <p className="text-primary font-bold font-sans uppercase text-xs tracking-wide">— Dra. Helena C., Diretora Médica</p>
+
+              <div className="snap-center min-w-[85vw] sm:min-w-[350px] lg:min-w-0 bg-white border border-gray-200 p-6 lg:p-8 hover:border-gold/40 transition-colors shadow-sm relative flex flex-col justify-between">
+                <Quote className="absolute top-6 right-6 text-gold/10 w-12 h-12" />
+                <div>
+                  <div className="flex text-gold mb-6 gap-1">
+                    {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
+                  </div>
+                  <p className="text-primary/80 font-serif italic text-base lg:text-sm xl:text-base mb-8 relative z-10 leading-relaxed">
+                    &quot;Serviço excepcional! A equipe é atenciosa e faz você se sentir amparado, explicaram tudo com clareza. Recomendo muito!&quot;
+                  </p>
+                </div>
+                <p className="text-primary font-bold font-sans uppercase text-[10px] sm:text-xs tracking-wide">— Riley B.</p>
+              </div>
+
+              <div className="snap-center min-w-[85vw] sm:min-w-[350px] lg:min-w-0 bg-white border border-gray-200 p-6 lg:p-8 hover:border-gold/40 transition-colors shadow-sm relative flex flex-col justify-between">
+                <Quote className="absolute top-6 right-6 text-gold/10 w-12 h-12" />
+                <div>
+                  <div className="flex text-gold mb-6 gap-1">
+                    {[1,2,3,4,5].map(i => <span key={i}>★</span>)}
+                  </div>
+                  <p className="text-primary/80 font-serif italic text-base lg:text-sm xl:text-base mb-8 relative z-10 leading-relaxed">
+                    &quot;Atendimento incrível e os melhores preços que já encontrei! Conquistaram um cliente para toda a vida, sem dúvidas.&quot;
+                  </p>
+                </div>
+                <p className="text-primary font-bold font-sans uppercase text-[10px] sm:text-xs tracking-wide">— Will Dean</p>
+              </div>
             </div>
           </div>
         </div>
