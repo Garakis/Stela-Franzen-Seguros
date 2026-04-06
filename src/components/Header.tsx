@@ -25,10 +25,10 @@ export default function Header() {
           : "bg-primary border-b border-transparent"
       }`}
     >
-      <div className="max-w-screen-2xl mx-auto px-4 md:px-8 py-3 md:py-4 flex justify-between items-center">
+      <div className="max-w-screen-2xl mx-auto px-4 md:px-8 py-1 md:py-2 flex justify-between items-center">
         {/* Raw Logo - No circular mask, no text */}
         <Link href="/" className="flex items-center">
-          <div className="relative w-56 sm:w-80 h-14 sm:h-20 transition-all duration-300">
+          <div className="relative w-64 sm:w-96 h-16 sm:h-24 transition-all duration-300">
             <Image 
               src="/logo.png" 
               alt="Stela Franzen Seguros Logo" 
